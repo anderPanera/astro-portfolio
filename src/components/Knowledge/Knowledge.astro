@@ -2,11 +2,70 @@
 const langs = [
     {
         lang: "JavaScript",
-        url: "https://developer.mozilla.org/es/docs/Web/JavaScript",
+        url: "https://developer.mozilla.org",
     },
     {
         lang: "TypeSript",
         url: "https://www.typescriptlang.org/",
+    },
+    {
+        lang: "PHP",
+        url: "https://www.php.net",
+    },
+    {
+        lang: "Java",
+        url: "https://www.java.com/es/",
+    },
+    {
+        lang: "VB",
+        url: "https://www.php.net",
+    },
+    {
+        lang: "C#",
+        url: "https://www.php.net",
+    },
+    {
+        lang: "PHP",
+        url: "https://www.php.net",
+    },
+];
+
+const ddbb = [
+    {
+        db: "MySQL",
+    },
+    {
+        db: "PostgreSQL",
+    },
+];
+
+const libraries = [
+    {
+        library: "React",
+    },
+    {
+        library: "Threejs",
+    },
+    {
+        library: "R3F",
+    },
+];
+
+const frameworks = [
+    {
+        fw: "Next.JS",
+    },
+    {
+        fw: "Vite",
+    },
+    {
+        fw: "NestJS",
+    },
+];
+
+const services = [
+    {
+        service: "AWS",
     },
 ];
 ---
@@ -14,7 +73,19 @@ const langs = [
 <div class="knowledge">
     <span class="title">Abilities</span>
     <div class="scene">
-        
+        {langs.map((lang, i) => <div class="lang">{lang.lang}</div>)}
+
+        {ddbb.map((db, i) => <div class="lang">{db.db}</div>)}
+
+        {frameworks.map((fw, i) => <div class="lang">{fw.fw}</div>)}
+
+        {
+            libraries.map((library, i) => (
+                <div class="lang">{library.library}</div>
+            ))
+        }
+
+        {services.map((service, i) => <div class="lang">{service.service}</div>)}
     </div>
     <!-- <div class="list">
         {langs.map((lang, i) => (
@@ -43,9 +114,20 @@ const langs = [
 
     .scene {
         width: 100%;
-        height: 500px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Crect width='40' height='40' fill='%23fff' /%3E%3Crect x='50%' width='1' height='100%' fill='rgb(203 213 225)' /%3E%3Crect y='50%' width='100%' height='1' fill='rgb(203 213 225)' /%3E%3C/svg%3E%0A");
-        border-radius: 50px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='70' height='70' fill='%23fff' /%3E%3Crect x='50%' width='1' height='100%' fill='rgb(203 213 225)' /%3E%3Crect y='50%' width='100%' height='1' fill='rgb(203 213 225)' /%3E%3C/svg%3E%0A");
+        border-radius: 20px;
         border: solid 2px black;
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        gap: 44px;
+    }
+
+    .lang {
+        width: 80px;
+        height: 80px;
+        background-color: white;
+        border: solid 3px black;
     }
 </style>
