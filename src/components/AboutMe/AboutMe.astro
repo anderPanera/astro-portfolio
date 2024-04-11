@@ -7,6 +7,11 @@
     <div class="p">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus asperiores ipsa alias, omnis assumenda unde deleniti quia error similique inventore pariatur, autem, dicta a sequi atque modi aliquam eum sint.
     </div>
+    <div class="imagecont">
+        <div class="image">
+            <img src="https://d1ih8jugeo2m5m.cloudfront.net/2022/12/que-es-un-logo-lays.png" />
+        </div>
+    </div>
 </div>
 
 <style>
@@ -24,5 +29,28 @@
 
     .p {
         
+    }
+
+    
+    .imagecont {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image {
+        width: 50%;
+        aspect-ratio: 1/1;
+        border: solid 4px black;
+        display: flex;
+    }
+
+    .image>img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 </style>

@@ -1,0 +1,40 @@
+---
+const langs = [
+    {
+        lang: "JavaScript",
+        url: "https://developer.mozilla.org/es/docs/Web/JavaScript",
+    },
+    {
+        lang: "TypeSript",
+        url: "https://www.typescriptlang.org/",
+    },
+];
+---
+
+<div class="knowledge">
+    <span class="title">Abilities</span>
+    <div class="list">
+        {langs.map((lang, i) => (
+            <div>{lang.lang}</div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .knowledge {
+        font-family: sp;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .list {
+        display: flexbox;
+        flex-wrap: wrap;
+    }
+</style>
