@@ -1,41 +1,62 @@
 ---
+const knowledge = [
+    "langs",
+    "runtimes",
+    "ddbb",
+    "frameworks",
+    "libraries",
+    "services",
+];
+
 const langs = [
     {
         lang: "JavaScript",
-        url: "https://developer.mozilla.org",
+        logo: "/assets/icons/javascript.svg",
     },
     {
         lang: "TypeSript",
-        url: "https://www.typescriptlang.org/",
+        logo: "/assets/icons/typescript.svg",
     },
     {
         lang: "PHP",
-        url: "https://www.php.net",
+        logo: "/assets/icons/php.svg",
     },
     {
         lang: "Java",
-        url: "https://www.java.com/es/",
+        logo: "/assets/icons/java.svg",
     },
+];
+
+const runtimes = [
     {
-        lang: "VB",
-        url: "https://www.php.net",
-    },
-    {
-        lang: "C#",
-        url: "https://www.php.net",
-    },
-    {
-        lang: "PHP",
-        url: "https://www.php.net",
+        runtime: "Node.js",
+        logo: "/assets/icons/node.svg",
     },
 ];
 
 const ddbb = [
     {
         db: "MySQL",
+        logo: "/assets/icons/mysql.svg",
     },
     {
         db: "PostgreSQL",
+        logo: "/assets/icons/postgresql.svg",
+    },
+];
+
+const frameworks = [
+    {
+        fw: "Next.JS",
+        logo: "/assets/icons/nextjs.svg",
+    },
+    {
+        fw: "Vite",
+        logo: "/assets/icons/vite.svg",
+    },
+    {
+        fw: "NestJS",
+        logo: "/assets/icons/nestjs.svg",
     },
 ];
 
@@ -51,18 +72,6 @@ const libraries = [
     },
 ];
 
-const frameworks = [
-    {
-        fw: "Next.JS",
-    },
-    {
-        fw: "Vite",
-    },
-    {
-        fw: "NestJS",
-    },
-];
-
 const services = [
     {
         service: "AWS",
@@ -73,19 +82,41 @@ const services = [
 <div class="knowledge">
     <span class="title">Abilities</span>
     <div class="scene">
-        {langs.map((lang, i) => <div class="lang">{lang.lang}</div>)}
+        <div class="scenelist">
+            {
+                langs.map((lang, i) => (
+                    <div class="item">
+                        <img src={lang.logo} />
+                    </div>
+                ))
+            }
 
-        {ddbb.map((db, i) => <div class="lang">{db.db}</div>)}
+            {
+                runtimes.map((runtime, i) => (
+                    <div class="item">
+                        <img src={runtime.logo} />
+                    </div>
+                ))
+            }
 
-        {frameworks.map((fw, i) => <div class="lang">{fw.fw}</div>)}
-
-        {
-            libraries.map((library, i) => (
-                <div class="lang">{library.library}</div>
-            ))
-        }
-
-        {services.map((service, i) => <div class="lang">{service.service}</div>)}
+            {
+                ddbb.map((db, i) => (
+                    <div class="item">
+                        <img src={db.logo} />
+                    </div>
+                ))
+            }
+            {
+                frameworks.map((fw, i) => (
+                    <div class="item">
+                        <img src={fw.logo} />
+                    </div>
+                ))
+            }
+        </div>
+        <div class="scenelegend">
+            {knowledge.map((k, i) => <div>{k}</div>)}
+        </div>
     </div>
     <!-- <div class="list">
         {langs.map((lang, i) => (
@@ -119,15 +150,31 @@ const services = [
         border: solid 2px black;
         padding: 40px;
         display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .scenelist {
+        display: flex;
         flex-wrap: wrap;
         align-items: start;
         gap: 44px;
     }
 
-    .lang {
+    .item {
         width: 80px;
         height: 80px;
         background-color: white;
         border: solid 3px black;
+        padding: 10px;
+    }
+
+    .item > img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .scenelegend {
+        display: flex;
     }
 </style>
